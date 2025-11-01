@@ -5,13 +5,13 @@ export class ViewArticlePage {
     this.page = page;
     this.homeTabButton = page.locator('(//a[text()="Home"])[1]');
     this.editArticleButton = page.locator('//*[@class="article-actions"]//a[contains(text(), "Edit Article")]');
-    this.followButton = page.locator('//*[@class="article-actions"]//button[contains(., "Follow")]');
-    this.unfollowButton = page.locator('//*[@class="article-actions"]//button[contains(., "Unfollow")]');
+    this.followButton = page.page.locator('.article-actions button', { hasText: /^Follow / });
+    this.unfollowButton = page.page.locator('.article-actions button', { hasText: /^Unfollow / });
     this.articleTitleHeader = page.getByRole('heading');
   }
 
   authorLinkInArticleHeader(username) {
-    return this.page.getByRole('link', { username }).first();
+    return this.page.getByRole('link', { name: username }).first();
   }
 
   url() {
