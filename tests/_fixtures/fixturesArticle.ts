@@ -4,10 +4,10 @@ import { CreateArticlePage } from '../../src/ui/pages/article/CreateArticlePage'
 import { ViewArticlePage } from '../../src/ui/pages/article/ViewArticlePage';
 
 export const test = base.extend<{
-  articleWithoutTags;
-  articleWithOneTag;
-  createArticlePage;
-  viewArticlePage;
+  articleWithoutTags: {};
+  articleWithOneTag: {};
+  createArticlePage: CreateArticlePage;
+  viewArticlePage: ViewArticlePage;
 }>({
   articleWithoutTags: async ({ logger }, use) => {
     const article = generateNewArticleData(logger);

@@ -12,7 +12,7 @@ export const test = base.extend<
     infoTestLog;
   },
   {
-    logger;
+    logger: Logger;
   }
 >({
   page1: async ({ page }, use) => {
